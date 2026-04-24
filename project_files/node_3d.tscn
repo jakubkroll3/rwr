@@ -12,20 +12,26 @@ size = Vector3(0.1, 0.1, 0.1)
 script = ExtResource("1_a202f")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=706769083]
+script = ExtResource("1_a202f")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1568950306]
+script = ExtResource("1_a202f")
 
 [node name="leftcontroller" type="XRController3D" parent="XROrigin3D" unique_id=647079975]
 tracker = &"left_hand"
+script = ExtResource("1_a202f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/leftcontroller" unique_id=1523886876]
 mesh = SubResource("BoxMesh_noarx")
+script = ExtResource("1_a202f")
 
 [node name="rightcontroller" type="XRController3D" parent="XROrigin3D" unique_id=423722999]
 tracker = &"right_hand"
+script = ExtResource("1_a202f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/rightcontroller" unique_id=1750576780]
 mesh = SubResource("BoxMesh_a0tk4")
+script = ExtResource("1_a202f")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1872237746]
 script = ExtResource("1_a202f")
