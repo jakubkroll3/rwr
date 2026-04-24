@@ -15,21 +15,23 @@ script = ExtResource("1_a202f")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1568950306]
 
-[node name="XRController3D" type="XRController3D" parent="XROrigin3D" unique_id=647079975]
+[node name="leftcontroller" type="XRController3D" parent="XROrigin3D" unique_id=647079975]
 tracker = &"left_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D" unique_id=1523886876]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/leftcontroller" unique_id=1523886876]
 mesh = SubResource("BoxMesh_noarx")
 
-[node name="XRController3D2" type="XRController3D" parent="XROrigin3D" unique_id=423722999]
+[node name="rightcontroller" type="XRController3D" parent="XROrigin3D" unique_id=423722999]
 tracker = &"right_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D2" unique_id=1750576780]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/rightcontroller" unique_id=1750576780]
 mesh = SubResource("BoxMesh_a0tk4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1872237746]
+script = ExtResource("1_a202f")
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1724120064]
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Enter VR"
+script = ExtResource("1_a202f")
