@@ -4,52 +4,29 @@
 [ext_resource type="PackedScene" uid="uid://dupacv2ituboo" path="res://assets/models/hand_r.gltf" id="2_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://brmbi36b30l4f" path="res://assets/models/hand_l.gltf" id="3_r3fl7"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_noarx"]
-size = Vector3(0.1, 0.1, 0.1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_a0tk4"]
-size = Vector3(0.1, 0.1, 0.1)
-
 [node name="Node3D" type="Node3D" unique_id=1600895967]
 script = ExtResource("1_a202f")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=706769083]
-script = ExtResource("1_a202f")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1568950306]
-script = ExtResource("1_a202f")
 
-[node name="leftcontroller" type="XRController3D" parent="XROrigin3D" unique_id=647079975]
+[node name="rightcontroller" type="XRController3D" parent="XROrigin3D" unique_id=647079975]
 tracker = &"left_hand"
-script = ExtResource("1_a202f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/leftcontroller" unique_id=1523886876]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.074573204, 0, 0)
-transparency = 1.0
-mesh = SubResource("BoxMesh_noarx")
-script = ExtResource("1_a202f")
+[node name="hand_r" parent="XROrigin3D/rightcontroller" unique_id=369951764 instance=ExtResource("2_a0tk4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07260634, -0.00024715066, 2.9802322e-08)
 
-[node name="hand_r" parent="XROrigin3D/leftcontroller/MeshInstance3D" unique_id=369951764 instance=ExtResource("2_a0tk4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0001065433, 0, 0)
-
-[node name="rightcontroller" type="XRController3D" parent="XROrigin3D" unique_id=423722999]
+[node name="leftcontroller" type="XRController3D" parent="XROrigin3D" unique_id=423722999]
 tracker = &"right_hand"
-script = ExtResource("1_a202f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/rightcontroller" unique_id=1750576780]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05505809, 0, 0)
-transparency = 1.0
-mesh = SubResource("BoxMesh_a0tk4")
-script = ExtResource("1_a202f")
-
-[node name="hand_l" parent="XROrigin3D/rightcontroller/MeshInstance3D" unique_id=111184528 instance=ExtResource("3_r3fl7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006856393, 0, 0)
+[node name="hand_l" parent="XROrigin3D/leftcontroller" unique_id=111184528 instance=ExtResource("3_r3fl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06191448, 0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1872237746]
-script = ExtResource("1_a202f")
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1724120064]
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Enter VR"
-script = ExtResource("1_a202f")
+metadata/_edit_use_anchors_ = true
